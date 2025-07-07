@@ -10,54 +10,27 @@
       margin: 0;
       padding: 0;
       background-color: #121212;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill-opacity="0.05"><rect width="20" height="20" fill="%23000000"/></svg>');
       font-family: 'Poppins', sans-serif;
       color: #e0e0e0;
       text-align: center;
       padding: 60px 20px;
-      overflow-x: hidden;
     }
 
     .header {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 15px;
-      font-weight: 600;
       font-size: 3rem;
       color: #8fcf7e;
-      animation: fadeIn 1s ease forwards;
-      opacity: 0;
-    }
-    .header::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 60%;
-      height: 4px;
-      background: linear-gradient(90deg, #5abf53, #a8ff9e);
-      border-radius: 3px;
+      margin-bottom: 10px;
     }
 
     h2 {
-      font-weight: 400;
       color: #a1c18a;
-      margin-top: 0;
-      margin-bottom: 40px;
-      font-size: 1.25rem;
-      animation: fadeIn 1.4s ease forwards;
-      opacity: 0;
+      margin-bottom: 30px;
     }
 
     .about {
-      font-size: 1rem;
       color: #bbbbbb;
-      margin-bottom: 50px;
       max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-      animation: fadeIn 1.8s ease forwards;
-      opacity: 0;
+      margin: 0 auto 50px;
     }
 
     .projects-wrapper {
@@ -65,99 +38,63 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 25px;
-      max-width: 960px;
-      margin: 0 auto 60px auto;
+      max-width: 1100px;
+      margin: 0 auto 60px;
     }
 
     .project-container {
       width: 420px;
       padding: 20px;
-      border-radius: 20px;
+      border-radius: 15px;
       background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 8px 32px 0 rgba(0, 255, 100, 0.25);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeIn 2.2s ease forwards;
-      opacity: 0;
+      box-shadow: 0 4px 20px rgba(0, 255, 100, 0.15);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .project-container:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 48px 0 rgba(0, 255, 100, 0.5);
-    }
 
     iframe {
       width: 100%;
-      height: 460px;
+      height: 300px;
+      border-radius: 10px;
       border: none;
-      border-radius: 15px;
-      display: block;
+    }
+
+    .description {
+      text-align: left;
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #d0d0d0;
+    }
+
+    .sample-code {
+      background-color: #1e1e1e;
+      color: #8fcf7e;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 10px;
+      font-family: monospace;
+      text-align: left;
+      white-space: pre-wrap;
+      font-size: 0.9rem;
     }
 
     .coming-soon {
-      color: #a8ff9e;
       font-weight: 600;
-      font-size: 1.5rem;
-      margin-top: auto;
-      animation: pulse 2.5s infinite ease-in-out;
+      color: #a8ff9e;
+      font-size: 1.2rem;
+      margin: 30px 0;
     }
 
     .contact-section {
-      max-width: 480px;
-      margin: 0 auto;
       background: rgba(255, 255, 255, 0.05);
-      padding: 30px 25px;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px 0 rgba(0, 255, 100, 0.25);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 25px;
+      border-radius: 10px;
       color: #a8ff9e;
+      max-width: 400px;
+      margin: 0 auto;
       font-weight: 600;
-      font-size: 1.3rem;
-      animation: fadeIn 2.6s ease forwards;
-      opacity: 0;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.7;
-      }
-      50% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .project-container {
-        width: 90vw;
-      }
-      iframe {
-        height: 360px;
-      }
-      .header {
-        font-size: 2.5rem;
-      }
-      h2 {
-        font-size: 1.1rem;
-      }
-      .about {
-        font-size: 0.95rem;
-      }
-      .contact-section {
-        font-size: 1.1rem;
-        padding: 20px 15px;
-      }
+      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -168,15 +105,26 @@
 
   <div class="projects-wrapper">
     <div class="project-container">
-      <iframe
-        src="https://academy.cs.cmu.edu/sharing/silverEagle694274/embed"
-        allowfullscreen
-        loading="lazy"
-        title="Surya's Project">
-      </iframe>
+      <iframe src="https://academy.cs.cmu.edu/sharing/silverEagle694274/embed" allowfullscreen loading="lazy"></iframe>
+      <div class="description">
+        This is a project describing 4 out of the 17 global goals. We learned about making shapes, fills, gradients, borders, dashes, etc. in this unit.
+      </div>
+      <div class="sample-code">
+Label('Life Below', 254, 15, size=14, bold=True, font='monospace')
+Label('Water', 233, 38, size=14, bold=True, font='monospace')
+Oval(340, 85, 60, 35, fill='sandyBrown')
+Polygon(330, 85, 295, 60, 295, 110, fill='sandyBrown')
+Oval(290, 135, 60, 35, fill='sandyBrown')
+Polygon(280, 135, 245, 110, 245, 160, fill='sandyBrown')
+Circle(355, 85, 3, fill='black')
+Circle(305, 135, 3, fill='black')
+Circle(375, 50, 6, fill=gradient('gainsboro', 'white'), border='black', borderWidth=1, opacity=80)
+Circle(320, 110, 6, fill=gradient('gainsboro', 'white'), border='black', borderWidth=1, opacity=80)
+Circle(362, 158, 10, fill=gradient('gainsboro', 'white'), border='black', borderWidth=1, opacity=80)
+      </div>
     </div>
 
-    <!-- 5 Coming Soon placeholders -->
+    <!-- Blank coming soon sections -->
     <div class="project-container">
       <div class="coming-soon">Coming Soon</div>
     </div>
@@ -193,6 +141,12 @@
       <div class="coming-soon">Coming Soon</div>
     </div>
   </div>
+
+  <div class="contact-section">
+    📞 Contact Me: 000-000-0000
+  </div>
+</body>
+</html>
 
   <section class="contact-section">
     <p>📞 Contact Me: 000-000-0000</p>
