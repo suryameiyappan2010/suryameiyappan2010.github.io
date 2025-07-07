@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <title>Surya's Portfolio</title>
   <style>
-    /* Import a cool modern font from Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    /* Subtle noise background using SVG pattern */
     body {
       margin: 0;
       padding: 0;
@@ -20,14 +18,13 @@
       overflow-x: hidden;
     }
 
-    /* Accent gradient line below header */
     .header {
       position: relative;
       display: inline-block;
       margin-bottom: 15px;
       font-weight: 600;
       font-size: 3rem;
-      color: #8fcf7e; /* dark green accent */
+      color: #8fcf7e;
       animation: fadeIn 1s ease forwards;
       opacity: 0;
     }
@@ -63,10 +60,17 @@
       opacity: 0;
     }
 
-    /* Glassmorphism container for iframe */
+    .projects-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 960px;
+      margin: 0 auto 60px auto;
+    }
+
     .project-container {
       width: 420px;
-      margin: 0 auto;
       padding: 20px;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.05);
@@ -77,6 +81,9 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       animation: fadeIn 2.2s ease forwards;
       opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .project-container:hover {
       transform: translateY(-8px);
@@ -91,18 +98,51 @@
       display: block;
     }
 
-    /* Simple fade-in animation */
+    .coming-soon {
+      color: #a8ff9e;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-top: auto;
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    .contact-section {
+      max-width: 480px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(0, 255, 100, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #a8ff9e;
+      font-weight: 600;
+      font-size: 1.3rem;
+      animation: fadeIn 2.6s ease forwards;
+      opacity: 0;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.7;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
     @keyframes fadeIn {
       to {
         opacity: 1;
       }
     }
 
-    /* Responsive for mobile */
+    /* Responsive */
     @media (max-width: 480px) {
       .project-container {
         width: 90vw;
-        height: auto;
       }
       iframe {
         height: 360px;
@@ -116,6 +156,10 @@
       .about {
         font-size: 0.95rem;
       }
+      .contact-section {
+        font-size: 1.1rem;
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
@@ -124,13 +168,29 @@
   <h2>Programming with Precision. Tuned into Innovation.</h2>
   <p class="about">I'm a sophomore from Illinois who loves exploring the intersection of technology and music.</p>
 
-  <div class="project-container">
-    <iframe
-      src="https://academy.cs.cmu.edu/sharing/silverEagle694274/embed"
-      allowfullscreen
-      loading="lazy"
-      title="Surya's Project">
-    </iframe>
+  <div class="projects-wrapper">
+    <div class="project-container">
+      <iframe
+        src="https://academy.cs.cmu.edu/sharing/silverEagle694274/embed"
+        allowfullscreen
+        loading="lazy"
+        title="Surya's Project">
+      </iframe>
+    </div>
+
+    <div class="project-container">
+      <div class="coming-soon">Coming Soon</div>
+    </div>
+    <div class="project-container">
+      <div class="coming-soon">Coming Soon</div>
+    </div>
+    <div class="project-container">
+      <div class="coming-soon">Coming Soon</div>
+    </div>
   </div>
+
+  <section class="contact-section">
+    <p>📞 Contact Me: (000) 000-0000</p>
+  </section>
 </body>
 </html>
