@@ -4,58 +4,71 @@
   <meta charset="UTF-8" />
   <title>Surya's Portfolio</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       padding: 0;
-      background-color: #121212;
-      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(#0a0a0a, #1a1a1a);
+      font-family: 'Orbitron', sans-serif;
       color: #e0e0e0;
       text-align: center;
-      padding: 60px 20px;
+      overflow-x: hidden;
     }
 
     .header {
       font-size: 3rem;
-      color: #8fcf7e;
-      margin-bottom: 10px;
+      color: #00ffcc;
+      margin: 30px 0 10px;
+      text-shadow: 0 0 15px #00ffcc;
     }
 
     h2 {
-      color: #a1c18a;
+      color: #66ffe0;
       margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ffcc;
     }
 
     .about {
       color: #bbbbbb;
-      max-width: 480px;
+      max-width: 600px;
       margin: 0 auto 50px;
     }
 
     .projects-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      max-width: 1100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1300px;
       margin: 0 auto 60px;
+      padding: 0 20px;
     }
 
     .project-container {
-      width: 420px;
+      background: rgba(0, 255, 204, 0.05);
+      border: 1px solid #00ffcc33;
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 4px 20px rgba(0, 255, 100, 0.15);
+      box-shadow: 0 0 25px rgba(0, 255, 204, 0.1);
+      backdrop-filter: blur(3px);
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: transform 0.3s;
+    }
+
+    .project-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 40px rgba(0, 255, 204, 0.3);
     }
 
     iframe {
       width: 100%;
-      height: 300px;
+      height: 250px;
       border-radius: 10px;
       border: none;
     }
@@ -68,33 +81,35 @@
     }
 
     .sample-code {
-      background-color: #1e1e1e;
-      color: #8fcf7e;
-      padding: 10px;
-      border-radius: 10px;
+      background-color: #111;
+      color: #00ffcc;
+      padding: 12px;
+      border-radius: 8px;
       margin-top: 10px;
       font-family: monospace;
       text-align: left;
       white-space: pre-wrap;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      border: 1px solid #00ffcc55;
     }
 
     .coming-soon {
       font-weight: 600;
-      color: #a8ff9e;
+      color: #00ffcc;
       font-size: 1.2rem;
       margin: 30px 0;
     }
 
     .contact-section {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 25px;
+      background: rgba(0, 255, 204, 0.05);
+      padding: 20px;
       border-radius: 10px;
-      color: #a8ff9e;
+      color: #00ffcc;
       max-width: 400px;
-      margin: 0 auto;
+      margin: 30px auto;
       font-weight: 600;
       font-size: 1.2rem;
+      border: 1px solid #00ffcc33;
     }
   </style>
 </head>
@@ -108,6 +123,9 @@
       <iframe src="https://academy.cs.cmu.edu/sharing/silverEagle694274/embed" allowfullscreen loading="lazy"></iframe>
       <div class="description">
         This is a project describing 4 out of the 17 global goals. We learned about making shapes, fills, gradients, borders, dashes, etc. in this unit.
+      </div>
+      <div class="description">
+        The code below creates the "Life Below Water" goal box featured in the project above.
       </div>
       <div class="sample-code">
 Label('Life Below', 254, 15, size=14, bold=True, font='monospace')
@@ -145,11 +163,5 @@ Circle(362, 158, 10, fill=gradient('gainsboro', 'white'), border='black', border
   <div class="contact-section">
     📞 Contact Me: 000-000-0000
   </div>
-</body>
-</html>
-
-  <section class="contact-section">
-    <p>📞 Contact Me: 000-000-0000</p>
-  </section>
 </body>
 </html>
