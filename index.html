@@ -4,71 +4,58 @@
   <meta charset="UTF-8" />
   <title>Surya's Portfolio</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
-
-    * {
-      box-sizing: border-box;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(#0a0a0a, #1a1a1a);
-      font-family: 'Orbitron', sans-serif;
+      background-color: #0b0b0c;
+      font-family: 'Poppins', sans-serif;
       color: #e0e0e0;
       text-align: center;
-      overflow-x: hidden;
+      padding: 60px 20px;
     }
 
     .header {
       font-size: 3rem;
-      color: #00ffcc;
-      margin: 30px 0 10px;
-      text-shadow: 0 0 15px #00ffcc;
+      color: #8fcf7e;
+      margin-bottom: 10px;
     }
 
     h2 {
-      color: #66ffe0;
+      color: #a1c18a;
       margin-bottom: 30px;
-      text-shadow: 0 0 10px #00ffcc;
     }
 
     .about {
       color: #bbbbbb;
-      max-width: 600px;
+      max-width: 480px;
       margin: 0 auto 50px;
     }
 
     .projects-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
       max-width: 1300px;
       margin: 0 auto 60px;
-      padding: 0 20px;
     }
 
     .project-container {
-      background: rgba(0, 255, 204, 0.05);
-      border: 1px solid #00ffcc33;
-      border-radius: 12px;
+      width: 420px;
       padding: 20px;
-      box-shadow: 0 0 25px rgba(0, 255, 204, 0.1);
-      backdrop-filter: blur(3px);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 255, 100, 0.15);
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform 0.3s;
-    }
-
-    .project-container:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 40px rgba(0, 255, 204, 0.3);
     }
 
     iframe {
       width: 100%;
-      height: 250px;
+      height: 300px;
       border-radius: 10px;
       border: none;
     }
@@ -81,35 +68,33 @@
     }
 
     .sample-code {
-      background-color: #111;
-      color: #00ffcc;
-      padding: 12px;
-      border-radius: 8px;
+      background-color: #1e1e1e;
+      color: #8fcf7e;
+      padding: 10px;
+      border-radius: 10px;
       margin-top: 10px;
       font-family: monospace;
       text-align: left;
       white-space: pre-wrap;
-      font-size: 0.85rem;
-      border: 1px solid #00ffcc55;
+      font-size: 0.9rem;
     }
 
     .coming-soon {
       font-weight: 600;
-      color: #00ffcc;
+      color: #a8ff9e;
       font-size: 1.2rem;
       margin: 30px 0;
     }
 
     .contact-section {
-      background: rgba(0, 255, 204, 0.05);
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
       border-radius: 10px;
-      color: #00ffcc;
+      color: #a8ff9e;
       max-width: 400px;
-      margin: 30px auto;
+      margin: 0 auto;
       font-weight: 600;
       font-size: 1.2rem;
-      border: 1px solid #00ffcc33;
     }
   </style>
 </head>
@@ -142,13 +127,37 @@ Circle(362, 158, 10, fill=gradient('gainsboro', 'white'), border='black', border
       </div>
     </div>
 
+    <!-- Second project embedded -->
+    <div class="project-container">
+      <iframe src="https://academy.cs.cmu.edu/sharing/mintCreamTurtle187297/embed" allowfullscreen loading="lazy"></iframe>
+      <div class="description">
+        This is a project describing one global goals in slideshow form. In this unit, we used functions and mouse actions to code this project.
+      </div>
+      <div class="description">
+        This code is used to code the second slide.
+      </div>
+      <div class="sample-code">
+def onMousePress(x,y):
+    page.value += 1
+    if(page.value == 2):
+        Rect(0,0,400,380, fill='lemonChiffon')
+        FirstLogo(250,338,'black','white', 'Dial 211 to find food agencies nearby')
+        Label('7 Reasons Why Food is Not', 200, 40, font='monoscript', size=20, bold=True)
+        Label('Accessible Around the World', 215, 60, font='monoscript', size=20, bold=True)
+        Label('*Poverty', 260, 100, font='monoscript', size=16, bold=True)
+        Label('*Famine', 260, 130, font='monoscript', size=16, bold=True)
+        Label('*Weather', 260, 160, font='monoscript', size=16, bold=True)
+        Label('*Disease', 260, 190, font='monoscript', size=16, bold=True)
+        Label('*Conflict', 260, 220, font='monoscript', size=16, bold=True)
+        Label('*Food Waste', 260, 250, font='monoscript', size=16, bold=True)
+        Label('*Gender Inequality', 270, 280, font='monoscript', size=16, bold=True)
+        SecondLogo(93, 186, 'darkKhaki', 'lemonChiffon')
+        Label(2,381,18, size=20)
+        R2.visible=True
+      </div>
+    </div>
+
     <!-- Blank coming soon sections -->
-    <div class="project-container">
-      <div class="coming-soon">Coming Soon</div>
-    </div>
-    <div class="project-container">
-      <div class="coming-soon">Coming Soon</div>
-    </div>
     <div class="project-container">
       <div class="coming-soon">Coming Soon</div>
     </div>
