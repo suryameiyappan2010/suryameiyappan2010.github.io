@@ -136,15 +136,12 @@ Circle(362, 158, 10, fill=gradient('gainsboro', 'white'), border='black', border
         This code is used to make my logo, the bowl with food. I show two distinct calls on different slides. I have four rectangles and one circle in my code, representing the lack of hunger in areas.
       </div>
       <div class="sample-code">
-def SecondLogo(x,y, color, color2):
-    Circle(x, y, 55, fill=color)
-    Rect(x-55, y-80, 110, 80, fill=color2)
-    Rect(x-5, y-80, 10, 70, fill=color)
-    Rect(x-35, y-60, 10, 50, fill=color)
-    Rect(x+25, y-60, 10, 50, fill=color)
-
-SecondLogo(200, 230, 'darkKhaki', 'lightYellow')
-SecondLogo(95, 190, 'darkKhaki', 'lightGoldenrodYellow')
+def onMousePress(x,y):
+    page.value += 1
+    if(page.value == 2):
+        SecondLogo(93, 186, 'darkKhaki', 'lemonChiffon')
+    if(page.value == 3):
+        SecondLogo(95, 190, 'darkKhaki', 'lightGoldenrodYellow')
       </div>
     </div>
 
