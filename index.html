@@ -46,8 +46,8 @@
       width: 420px;
       padding: 20px;
       border-radius: 15px;
-      background: linear-gradient(145deg, #1c1c1f, #111114);
-      box-shadow: 0 4px 20px rgba(0, 255, 100, 0.15), inset 0 0 5px rgba(0, 255, 150, 0.05);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 255, 100, 0.15);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -133,32 +133,21 @@ Circle(362, 158, 10, fill=gradient('gainsboro', 'white'), border='black', border
         This is a project describing one global goals in slideshow form. In this unit, we used functions and mouse actions to code this project.
       </div>
       <div class="description">
-        This code is used to code the second slide.
+        This code is used to make my logo, the bowl with food. I show two distinct calls on different slides. I have four rectangles and one circle in my code, representing the lack of hunger in areas.
       </div>
       <div class="sample-code">
-def onMousePress(x,y):
-    page.value += 1
-    if(page.value == 2):
-        Rect(0,0,400,380, fill='lemonChiffon')
-        FirstLogo(250,338,'black','white', 'Dial 211 to find food agencies nearby')
-        Label('7 Reasons Why Food is Not', 200, 40, font='monoscript', size=20, bold=True)
-        Label('Accessible Around the World', 215, 60, font='monoscript', size=20, bold=True)
-        Label('*Poverty', 260, 100, font='monoscript', size=16, bold=True)
-        Label('*Famine', 260, 130, font='monoscript', size=16, bold=True)
-        Label('*Weather', 260, 160, font='monoscript', size=16, bold=True)
-        Label('*Disease', 260, 190, font='monoscript', size=16, bold=True)
-        Label('*Conflict', 260, 220, font='monoscript', size=16, bold=True)
-        Label('*Food Waste', 260, 250, font='monoscript', size=16, bold=True)
-        Label('*Gender Inequality', 270, 280, font='monoscript', size=16, bold=True)
-        SecondLogo(93, 186, 'darkKhaki', 'lemonChiffon')
-        Label(2,381,18, size=20)
-        R2.visible=True
+def SecondLogo(x,y, color, color2):
+    Circle(x, y, 55, fill=color)
+    Rect(x-55, y-80, 110, 80, fill=color2)
+    Rect(x-5, y-80, 10, 70, fill=color)
+    Rect(x-35, y-60, 10, 50, fill=color)
+    Rect(x+25, y-60, 10, 50, fill=color)
+
+SecondLogo(200, 230, 'darkKhaki', 'lightYellow')
+SecondLogo(95, 190, 'darkKhaki', 'lightGoldenrodYellow')
       </div>
     </div>
 
-    <div class="project-container">
-      <div class="coming-soon">Coming Soon</div>
-    </div>
     <div class="project-container">
       <div class="coming-soon">Coming Soon</div>
     </div>
