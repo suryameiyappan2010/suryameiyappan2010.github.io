@@ -143,7 +143,8 @@ def SecondLogo(x,y, color, color2):
     Rect(x-5, y-80, 10, 70, fill=color)
     Rect(x-35, y-60, 10, 50, fill=color)
     Rect(x+25, y-60, 10, 50, fill=color)
-
+      </div>
+      <div class="sample-code">
 def onMousePress(x,y):
     page.value += 1
     if(page.value == 2):
@@ -154,21 +155,37 @@ def onMousePress(x,y):
     </div>
 
     <div class="project-container">
-      <div class="coming-soon">Coming Soon</div>
+      <iframe width="410" height="460" src="https://academy.cs.cmu.edu/sharing/slateBlueSeal934255/embed" allowfullscreen loading="lazy"></iframe>
+      <div class="description">
+        This project is a game that represents a global goal, educating the user and entertaining them at the same time. We used <strong>if statements</strong>, <strong>elif statements</strong>, and <strong>custom functions</strong>.
+      </div>
+      <div class="description">
+        This is my custom function which motivates the user with terms like <em>Way to Go</em> and <em>Try Harder</em>.
+      </div>
+      <div class="sample-code">
+#Surya - Custom Function with Motivational Messages
+def increaseMoney(x, upgrades):
+    dollar.value += x
+    if(upgrades >= 1) and (dollar.value <= 500):
+        v = Label('Try Harder!', 70, 220, size=15, font='orbitron')
+    if (dollar.value >= 8000) and (upgrades >= 2):
+        z = Rect(20, 210, 100, 20, fill='lightCyan')
+        wtg = Label('Keep Going!', 70, 220, size=15, font='orbitron')
+      </div>
+      <div class="sample-code">
+increaseMoney(10, 1)
+increaseMoney(50, 2)
+increaseMoney(200, 3)
+      </div>
     </div>
-    <div class="project-container">
-      <div class="coming-soon">Coming Soon</div>
-    </div>
-    <div class="project-container">
-      <div class="coming-soon">Coming Soon</div>
-    </div>
-  </div>
 
-  <div class="contact-section">
-    📞 Contact Me: 000-000-0000
+    <div class="project-container">
+      <div class="coming-soon">Coming Soon</div>
+    </div>
+    <div class="project-container">
+      <div class="coming-soon">Coming Soon</div>
+    </div>
   </div>
-</body>
-</html>
 
   <div class="contact-section">
     📞 Contact Me: 000-000-0000
