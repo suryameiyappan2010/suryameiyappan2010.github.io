@@ -136,15 +136,6 @@ Circle(362, 158, 10, fill=gradient('gainsboro', 'white'), border='black', border
         This code is used to make my logo, the bowl with food. I show two distinct calls on different slides. I have four rectangles and one circle in my code, representing the lack of hunger in areas.
       </div>
       <div class="sample-code">
-#Logo 2 - Surya
-def SecondLogo(x,y, color, color2):
-    Circle(x, y, 55, fill=color)
-    Rect(x-55, y-80, 110, 80, fill=color2)
-    Rect(x-5, y-80, 10, 70, fill=color)
-    Rect(x-35, y-60, 10, 50, fill=color)
-    Rect(x+25, y-60, 10, 50, fill=color)
-      </div>
-      <div class="sample-code">
 def onMousePress(x,y):
     page.value += 1
     if(page.value == 2):
@@ -155,26 +146,29 @@ def onMousePress(x,y):
     </div>
 
     <div class="project-container">
-      <iframe width="410" height="460" src="https://academy.cs.cmu.edu/sharing/slateBlueSeal934255/embed" allowfullscreen loading="lazy"></iframe>
+      <iframe width="410" height="460"
+        src="https://academy.cs.cmu.edu/sharing/slateBlueSeal934255/embed" allowfullscreen loading="lazy">
+      </iframe>
       <div class="description">
-        This project is a game that represents a global goal, educating the user and entertaining them at the same time. We used <strong>if statements</strong>, <strong>elif statements</strong>, and <strong>custom functions</strong>.
+        This project is a game that represents a global goal, educating the user and entertaining them at the same time. 
+        We used <strong>if statements</strong>, <strong>elif statements</strong>, and <strong>custom functions</strong>.
       </div>
       <div class="description">
-        This is my custom function which motivates the user with terms like <em>Way to Go</em> and <em>Try Harder</em>.
+        This is my custom function which motivates the user with terms like <em>Way to Go</em> and <em>Try Harder</em> using the parameters money per click and number of upgrades the user has. Based on the dollar value and the number of upgrades the user has, different motivational texts pop up.
       </div>
       <div class="sample-code">
-#Surya - Custom Function with Motivational Messages
-def increaseMoney(x, upgrades):
-    dollar.value += x
-    if(upgrades >= 1) and (dollar.value <= 500):
-        v = Label('Try Harder!', 70, 220, size=15, font='orbitron')
-    if (dollar.value >= 8000) and (upgrades >= 2):
-        z = Rect(20, 210, 100, 20, fill='lightCyan')
-        wtg = Label('Keep Going!', 70, 220, size=15, font='orbitron')
+#Surya - Custom Function with Motivational Messages<br>
+def increaseMoney(x, upgrades):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dollar.value += x<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(upgrades &gt;= 1) and (dollar.value &lt;= 500):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = Label('Try Harder!', 70, 220, size=15, font='orbitron')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (dollar.value &gt;= 8000) and (upgrades &gt;= 2):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z = Rect(20, 210, 100, 20, fill='lightCyan')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wtg = Label('Keep Going!', 70, 220, size=15, font='orbitron')
       </div>
       <div class="sample-code">
-increaseMoney(10, 1)
-increaseMoney(50, 2)
+increaseMoney(10, 1)<br>
+increaseMoney(50, 2)<br>
 increaseMoney(200, 3)
       </div>
     </div>
@@ -186,6 +180,12 @@ increaseMoney(200, 3)
       <div class="coming-soon">Coming Soon</div>
     </div>
   </div>
+
+  <div class="contact-section">
+    📞 Contact Me: 000-000-0000
+  </div>
+</body>
+</html>
 
   <div class="contact-section">
     📞 Contact Me: 000-000-0000
