@@ -174,6 +174,50 @@ increaseMoney(200, 3)
     </div>
 
     <div class="project-container">
+      <iframe width="410" height="460"
+        src="https://academy.cs.cmu.edu/sharing/lavenderBlushFrog501627/embed"> 
+      </iframe>
+      <div class="description">
+        This is the unit four creative task where we make a quiz to see how well the user conserves energy, teaching them about how to conserve energy and what to change about their actions. To accomplish this we used hits, contains, onkeypress, and onmousepress.
+      </div>
+      <div class="description">
+        This is the code for slide six which uses star variables called option 1, option 2, ... etc. and hits to make it so that only when you click the border of the star you go to the next slide, adding more depth to the slide and making it more challenging.
+      </div>
+      <div class="sample-code">
+#Slide 6 - Surya   
+def q6():
+    app.background = 'navajoWhite'
+    Rect(0, 0, 400, 400, fill='navajoWhite')
+    Label('Question 6:',80,51,size=20)
+    Rect(380, 12, 20, 388, fill='white', border='black', visible=True)
+    Label('Why is solar power considered clean energy?', 190,89,size=18)
+    Label('Hit the border of the star to select the correct answer', 200,10,size=10)
+    optionOne.visible = True
+    optionTwo.visible = True
+    optionThree.visible = True
+    optionFour.visible = True
+    optionOne.toFront()
+    optionTwo.toFront()
+    optionThree.toFront()
+    optionFour.toFront()
+    Label('It produces no air pollution',145,150,size=16),
+    Label('It comes from underground',145,225,size=16),
+    Label('It uses gasoline',105,300,size=16),
+    Label('It burns coal',93,375,size=16),
+    R1.visible=True
+    R1.toFront()
+    R2.visible=True
+    R2.toFront()
+    R3.visible=True
+    R3.toFront()
+    R4.visible=True
+    R4.toFront()
+    R5.visible=True
+    R5.toFront()
+      </div>
+    </div>
+
+    <div class="project-container">
       <div class="coming-soon">Coming Soon</div>
     </div>
     <div class="project-container">
