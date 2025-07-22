@@ -216,19 +216,49 @@ def q6():
     R5.toFront()
       </div>
     </div>
-  <div class="projects-wrapper">
 
-    <!-- Removed first occurrence of the Food Truck Game Project -->
-
-    <div class="projects-wrapper">
-      <div class="project-container">
-        <div class="coming-soon">Coming Soon</div>
+    <!-- Fifth project container with the Food Truck Game project -->
+    <div class="project-container">
+      <iframe width="410" height="460"
+        src="https://academy.cs.cmu.edu/sharing/mistyRoseKangaroo946339/embed" allowfullscreen loading="lazy">
+      </iframe>
+      <div class="description">
+        This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. This teaches them about how if you give away food you can save many people. To accomplish this, we used directional key commands and custom functions.
       </div>
-      <div class="project-container">
-        <div class="coming-soon">Coming Soon</div>
+      <div class="description">
+        This is my custom functions messages which send messages for the user to see based on the number of tries they take to complete the game and where on the path they are. The color changes for every time you change direction. This adds more depth to the game and gives the user a challenge to get it in the least amount of tries as possible.
+      </div>
+      <div class="sample-code">
+def messages(color):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (car.bottom &lt; 410) and (car.bottom &gt; 280) and (tries.value &gt;=0):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.value = 'Almost There'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.toFront()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.fill = color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif (9 &gt;= tries.value &gt;= 5) and (car.bottom &lt; 280):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.value = 'Try your best'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.toFront()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.fill = color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif (tries.value &gt;= 9):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.value = 'Do better'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.toFront()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.fill = color
+      </div>
+      <div class="sample-code">
+if ('right' in keys):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;car.rotateAngle = 90<br>
+&nbsp;&nbsp;&nbsp;&nbsp;car.centerX +=3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;messages('peachPuff')<br>
+if ('left' in keys):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;car.rotateAngle = 90<br>
+&nbsp;&nbsp;&nbsp;&nbsp;car.centerX -= 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;messages('dodgerBlue')
       </div>
     </div>
 
+    <!-- Sixth project container as Coming Soon -->
+    <div class="project-container">
+      <div class="coming-soon">Coming Soon</div>
+    </div>
   </div>
 
   <div class="contact-section">
