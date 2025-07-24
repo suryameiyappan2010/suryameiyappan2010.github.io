@@ -69,8 +69,8 @@
     iframe {
       border: none;
       width: 100%;
-      max-width: 100%; /* responsive max width */
-      height: 400px; /* bigger iframe height */
+      max-width: 100%;
+      height: 400px;
       border-radius: 10px;
       margin-bottom: 20px;
       transition: transform 0.3s ease;
@@ -113,7 +113,7 @@
 
   <div class="projects">
 
-    <!-- Project 1 -->
+    <!-- Box 1 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/peachPuffLynx175271/embed" loading="lazy" allowfullscreen></iframe>
       <p>This game is a food truck puzzle challenge that encourages users to complete a delivery by navigating through a maze-like map. It teaches about Zero Hunger through fun and logic. We used conditionals and events like <code>onKeyPress</code> and <code>onStep</code> to make the truck move correctly.</p>
@@ -127,7 +127,7 @@
         showMessage('Try Again')</code></pre>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Box 2 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/goldenRodToad290018/embed" loading="lazy" allowfullscreen></iframe>
       <p>This mini-game demonstrates hunger stats and teaches the Zero Hunger goal with facts and questions. We use randomness and data to change what fact or quiz appears. It’s educational and interactive.</p>
@@ -141,7 +141,7 @@ else:
     wrong += 1</code></pre>
     </div>
 
-    <!-- Project 3 -->
+    <!-- Box 3 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/azureRabbit648603/embed" loading="lazy" allowfullscreen></iframe>
       <p>This drag-and-drop style game challenges users to match food items with people in need. We created custom dragging logic and drop zones to make the game functional. It supports the hunger goal through interactive empathy.</p>
@@ -153,25 +153,27 @@ else:
         showRetry()</code></pre>
     </div>
 
-    <!-- Project 4 -->
+    <!-- Box 4 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/cadetBlueFrog487570/embed" loading="lazy" allowfullscreen></iframe>
-      <p>This project is a library that uses random stats and two games to describe the goal to take away all hunger in the world. The stats section teaches many people things they didn't know and the games provide an entertainer to hook the reader in.</p>
-      <p>This is my <code>onStep</code> code and custom function which motivates the user by displaying a different random message every few seconds and tells you if you messed up or won the game.</p>
+      <p>This project is a library that uses random stats and two games to describe the goal to take away all hunger in the world. The stats section teaches many people things they didn't know and the games provide an entertainer to hook the reader in. We used unit 6 variables such as onStep and random to make the facts and games as engaging as possible.</p>
+      <p>This is my onStep code and my custom function which motivates the user by displaying a different random message every few seconds and the custom function tells you if you messed up or won the game.</p>
       <pre><code>def onStep():
     if (app.background == 'peachPuff'):
-        app.messageTimer += 1
+        app.messageTimer +=1
         if (app.messageTimer >= 50):
             app.messageTimer = 0
             messageLabel.value = random.choice(messages)
-            messageLabel.visible = True
+            messageLabel.visible=True
             messageLabel.toFront()</code></pre>
+      <pre><code>backdrop = Rect(100, 150, 200, 75, fill='gainsboro', border='black', borderWidth=16, visible=False)
+finish = Label('message', 200, 190, fill='black', bold=True, size=24, visible=False)</code></pre>
       <pre><code>def success(message, color):
     backdrop.border = color
     finish.value = message
     finish.fill = color
-    backdrop.visible = True
-    finish.visible = True
+    backdrop.visible=True
+    finish.visible=True
     backdrop.toFront()
     finish.toFront()</code></pre>
       <pre><code>if (path.containsShape(car)):
@@ -185,36 +187,37 @@ if (car.hitsShape(foodCrate)):
     app.stop()</code></pre>
     </div>
 
-    <!-- Project 5 -->
+    <!-- Box 5 -->
     <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/mistyRoseKangaroo946339/embed" loading="lazy" allowfullscreen></iframe>
-      <p>This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. It teaches that giving away food can save lives.</p>
-      <p>We used directional key commands and custom functions to give feedback based on number of tries and path progress.</p>
+      <iframe width="410" height="460"
+        src="https://academy.cs.cmu.edu/sharing/mistyRoseKangaroo946339/embed"> 
+      </iframe>
+      <p>This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. This teaches them about how if you give away food you can save many people. To accomplish this, we used directional key commands and custom functions.</p>
+      <p>This is my custom functions messages which send messages for the user to see based on the number of tries they take to complete the game and where on the path they are. The color changes for every time you change direction. This adds more depth to the game and gives the user a challenge to get it in the least amount of tries as possible.</p>
       <pre><code>def messages(color):
-    if (car.bottom &lt; 410) and (car.bottom &gt; 280) and (tries.value &gt;= 0):
+    if (car.bottom &lt; 410) and (car.bottom &gt; 280) and (tries.value &gt;=0):
         motivation.value = 'Almost There'
-        motivation.fill = color
         motivation.toFront()
+        motivation.fill = color
     elif (9 &gt;= tries.value &gt;= 5) and (car.bottom &lt; 280):
         motivation.value = 'Try your best'
-        motivation.fill = color
         motivation.toFront()
+        motivation.fill = color
     elif (tries.value &gt;= 9):
         motivation.value = 'Do better'
-        motivation.fill = color
-        motivation.toFront()</code></pre>
-      <pre><code>if ('right' in keys):
+        motivation.toFront()
+        motivation.fill = color</code></pre>
+      <pre><code> if ('right' in keys):
     car.rotateAngle = 90
-    car.centerX += 3
+    car.centerX +=3
     messages('peachPuff')
-
 if ('left' in keys):
     car.rotateAngle = 90
     car.centerX -= 3
     messages('dodgerBlue')</code></pre>
     </div>
 
-    <!-- Project 6 -->
+    <!-- Box 6 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/khakiBear123456/embed" loading="lazy" allowfullscreen></iframe>
       <p>This project is a facts and quiz game for Zero Hunger. It uses multiple screens, labels, and score tracking to teach and entertain. We made use of global variables, lists, and logic functions to switch questions and feedback.</p>
@@ -229,6 +232,31 @@ if ('left' in keys):
         displayQuestion(currentIndex)
     else:
         showFinalScore()</code></pre>
+
+      <!-- Added content below as requested -->
+      <p>This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. This teaches them about how if you give away food you can save many people. To accomplish this, we used directional key commands and custom functions.</p>
+      <p>This is my custom functions messages which send messages for the user to see based on the number of tries they take to complete the game and where on the path they are. The color changes for every time you change direction. This adds more depth to the game and gives the user a challenge to get it in the least amount of tries as possible.</p>
+      <pre><code>def messages(color):
+    if (car.bottom &lt; 410) and (car.bottom &gt; 280) and (tries.value &gt;=0):
+        motivation.value = 'Almost There'
+        motivation.toFront()
+        motivation.fill = color
+    elif (9 &gt;= tries.value &gt;= 5) and (car.bottom &lt; 280):
+        motivation.value = 'Try your best'
+        motivation.toFront()
+        motivation.fill = color
+    elif (tries.value &gt;= 9):
+        motivation.value = 'Do better'
+        motivation.toFront()
+        motivation.fill = color</code></pre>
+      <pre><code> if ('right' in keys):
+    car.rotateAngle = 90
+    car.centerX +=3
+    messages('peachPuff')
+if ('left' in keys):
+    car.rotateAngle = 90
+    car.centerX -= 3
+    messages('dodgerBlue')</code></pre>
     </div>
 
   </div>
