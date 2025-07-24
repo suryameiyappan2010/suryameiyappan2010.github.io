@@ -21,7 +21,7 @@
     header {
       text-align: center;
       padding: 50px 20px 30px;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(5px);
       border-bottom: 1px solid #444;
     }
@@ -51,15 +51,19 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
-      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.4);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(10px);
       padding: 25px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: visible;
+      min-height: fit-content;
     }
 
     .project-box:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     }
 
     iframe {
@@ -67,17 +71,14 @@
       width: 100%;
       height: 260px;
       border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .project-box:hover iframe {
-      transform: scale(1.02);
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 15px;
       line-height: 1.6;
       color: #e0e0e0;
+      margin-bottom: 16px;
     }
 
     pre {
@@ -86,25 +87,14 @@
       border-radius: 10px;
       font-size: 13px;
       overflow-x: auto;
-      color: #dcdcdc;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #fff;
+      margin-bottom: 20px;
     }
 
     code {
-      font-family: monospace;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 30px;
-      }
-
-      .projects {
-        padding: 20px;
-      }
-
-      .project-box {
-        padding: 20px;
-      }
+      font-family: Consolas, monospace;
     }
   </style>
 </head>
@@ -117,24 +107,25 @@
 
   <div class="projects">
 
-    <!-- PROJECT BOXES (same as you had; no changes inside content) -->
-    <!-- Box 1 -->
+    <!-- Project 1 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/peachPuffLynx175271/embed"></iframe>
-      <p>This game is a food truck puzzle challenge that encourages users to complete a delivery by navigating through a maze-like map...</p>
+      <p>This game is a food truck puzzle challenge that encourages users to complete a delivery by navigating through a maze-like map. It teaches about Zero Hunger through fun and logic. We used conditionals and events like <code>onKeyPress</code> and <code>onStep</code> to make the truck move correctly.</p>
+      <p>We created a reusable function to give feedback based on the position of the truck and number of tries.</p>
       <pre><code>def feedback(position, tries):
-    if position == 'nearEnd' and tries <= 5:
+    if position == 'nearEnd' and tries &lt;= 5:
         showMessage('Awesome!')
-    elif position == 'mid' and tries < 10:
+    elif position == 'mid' and tries &lt; 10:
         showMessage('Keep Going!')
     else:
         showMessage('Try Again')</code></pre>
     </div>
 
-    <!-- Box 2 -->
+    <!-- Project 2 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/goldenRodToad290018/embed"></iframe>
-      <p>This mini-game demonstrates hunger stats and teaches the Zero Hunger goal with facts and questions...</p>
+      <p>This mini-game demonstrates hunger stats and teaches the Zero Hunger goal with facts and questions. We use randomness and data to change what fact or quiz appears. It’s educational and interactive.</p>
+      <p>Below is our code for randomizing stats and handling game scoring.</p>
       <pre><code>def showFact():
     statLabel.value = random.choice(facts)
     statLabel.visible = True</code></pre>
@@ -144,10 +135,11 @@ else:
     wrong += 1</code></pre>
     </div>
 
-    <!-- Box 3 -->
+    <!-- Project 3 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/azureRabbit648603/embed"></iframe>
-      <p>This drag-and-drop style game challenges users to match food items with people in need...</p>
+      <p>This drag-and-drop style game challenges users to match food items with people in need. We created custom dragging logic and drop zones to make the game functional. It supports the hunger goal through interactive empathy.</p>
+      <p>Here's the code that checks drops and triggers success or retry:</p>
       <pre><code>def onDrop(item, zone):
     if zone.contains(item.centerX, item.centerY):
         showSuccess()
@@ -155,57 +147,86 @@ else:
         showRetry()</code></pre>
     </div>
 
-    <!-- Box 4 -->
+    <!-- Project 4 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/cadetBlueFrog487570/embed"></iframe>
-      <p>This project is a library that uses random stats and two games to describe the goal to take away all hunger in the world...</p>
+      <p>This project is a library that uses random stats and two games to describe the goal to take away all hunger in the world. The stats section teaches many people things they didn't know and the games provide an entertainer to hook the reader in.</p>
+      <p>This is my <code>onStep</code> code and custom function which motivates the user by displaying a different random message every few seconds and tells you if you messed up or won the game.</p>
       <pre><code>def onStep():
     if (app.background == 'peachPuff'):
-        app.messageTimer +=1
+        app.messageTimer += 1
         if (app.messageTimer >= 50):
             app.messageTimer = 0
             messageLabel.value = random.choice(messages)
-            messageLabel.visible=True
+            messageLabel.visible = True
             messageLabel.toFront()</code></pre>
       <pre><code>def success(message, color):
     backdrop.border = color
     finish.value = message
     finish.fill = color
-    backdrop.visible=True
-    finish.visible=True
+    backdrop.visible = True
+    finish.visible = True
     backdrop.toFront()
     finish.toFront()</code></pre>
+      <pre><code>if (path.containsShape(car)):
+    pass
+else:
+    app.stop()
+    success('Game Over', 'crimson')
+
+if (car.hitsShape(foodCrate)):
+    success('You Win', 'green')
+    app.stop()</code></pre>
     </div>
 
-    <!-- Box 5 -->
+    <!-- Project 5 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/mistyRoseKangaroo946339/embed"></iframe>
-      <p>This project is a game that helps encompass the food global goal by using a food truck to collect food baskets...</p>
+      <p>This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. It teaches that giving away food can save lives.</p>
+      <p>We used directional key commands and custom functions to give feedback based on number of tries and path progress.</p>
       <pre><code>def messages(color):
-    if (car.bottom < 410) and (car.bottom > 280):
+    if (car.bottom &lt; 410) and (car.bottom &gt; 280) and (tries.value &gt;= 0):
         motivation.value = 'Almost There'
-    elif (9 >= tries.value >= 5) and (car.bottom < 280):
+        motivation.fill = color
+        motivation.toFront()
+    elif (9 &gt;= tries.value &gt;= 5) and (car.bottom &lt; 280):
         motivation.value = 'Try your best'
-    elif (tries.value >= 9):
-        motivation.value = 'Do better'</code></pre>
+        motivation.fill = color
+        motivation.toFront()
+    elif (tries.value &gt;= 9):
+        motivation.value = 'Do better'
+        motivation.fill = color
+        motivation.toFront()</code></pre>
+      <pre><code>if ('right' in keys):
+    car.rotateAngle = 90
+    car.centerX += 3
+    messages('peachPuff')
+
+if ('left' in keys):
+    car.rotateAngle = 90
+    car.centerX -= 3
+    messages('dodgerBlue')</code></pre>
     </div>
 
-    <!-- Box 6 -->
+    <!-- Project 6 -->
     <div class="project-box">
       <iframe src="https://academy.cs.cmu.edu/sharing/khakiBear123456/embed"></iframe>
-      <p>This project is a facts and quiz game for Zero Hunger...</p>
+      <p>This project is a facts and quiz game for Zero Hunger. It uses multiple screens, labels, and score tracking to teach and entertain. We made use of global variables, lists, and logic functions to switch questions and feedback.</p>
+      <p>This is how we switch questions and check answers in the quiz:</p>
       <pre><code>def checkAnswer(userInput):
     if userInput == answerList[currentIndex]:
         score.value += 1
         nextQuestion()</code></pre>
       <pre><code>def nextQuestion():
     currentIndex += 1
-    if currentIndex < len(questions):
+    if currentIndex &lt; len(questions):
         displayQuestion(currentIndex)
     else:
         showFinalScore()</code></pre>
     </div>
 
   </div>
+
 </body>
 </html>
+
