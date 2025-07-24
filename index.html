@@ -100,8 +100,8 @@
 </head>
 <body>
   <h1 class="header">Surya's Portfolio</h1>
-<h2>Programming with Precision. Tuned into Innovation.</h2>
-<p style="color:#f0f0f0; font-size: 1.25rem; margin-top: -10px;">Coding as fast as a lightning bolt ⚡⚡⚡</p>
+  <h2>Programming with Precision. Tuned into Innovation.</h2>
+  <p style="color:#f0f0f0; font-size: 1.25rem; margin-top: -10px;">Coding as fast as a lightning bolt ⚡⚡⚡</p>
   <p class="about">I'm a sophomore from Illinois who loves exploring the intersection of technology and music.</p>
 
   <div class="projects-wrapper">
@@ -256,9 +256,55 @@ if ('left' in keys):<br>
       </div>
     </div>
 
-    <!-- Sixth project container as Coming Soon -->
+    <!-- Sixth project container replaced with iframe and descriptions -->
     <div class="project-container">
-      <div class="coming-soon">Coming Soon</div>
+      <iframe width="410" height="460" src="https://academy.cs.cmu.edu/sharing/cadetBlueFrog487570/embed" allowfullscreen loading="lazy"></iframe>
+      
+      <div class="description">
+        This project is a library that uses random stats and two games to describe the goal to take away all hunger in the world. The stats section teaches many people things they didn't know and the games provide an entertainer to hook the reader in. We used unit 6 variables such as onStep and random to make the facts and games as engaging as possible.
+      </div>
+      
+      <div class="description">
+        This is my onStep code and my custom function which motivates the user by displaying a different random message every few seconds and the custom function tells you if you messed up or won the game.
+      </div>
+      
+      <div class="sample-code">
+def onStep():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (app.background == 'peachPuff'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.messageTimer += 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (app.messageTimer &gt;= 50):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.messageTimer = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;messageLabel.value = random.choice(messages)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;messageLabel.visible = True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;messageLabel.toFront()
+      </div>
+      
+      <div class="sample-code">
+backdrop = Rect(100, 150, 200, 75, fill='gainsboro', border='black', borderWidth=16, visible=False)<br>
+finish = Label('message', 200, 190, fill='black', bold=True, size=24, visible=False)
+      </div>
+      
+      <div class="sample-code">
+def success(message, color):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;backdrop.border = color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;finish.value = message<br>
+&nbsp;&nbsp;&nbsp;&nbsp;finish.fill = color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;backdrop.visible = True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;finish.visible = True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;backdrop.toFront()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;finish.toFront()
+      </div>
+      
+      <div class="sample-code">
+if (path.containsShape(car)):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pass<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;app.stop()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;success('Game Over', 'crimson')<br>
+if (car.hitsShape(foodCrate)):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;success('You Win', 'green')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;app.stop()
+      </div>
     </div>
   </div>
 
