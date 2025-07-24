@@ -69,9 +69,15 @@
     iframe {
       border: none;
       width: 100%;
-      height: 260px;
+      max-width: 100%; /* responsive max width */
+      height: 400px; /* bigger iframe height */
       border-radius: 10px;
       margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-box:hover iframe {
+      transform: scale(1.02);
     }
 
     p {
@@ -109,7 +115,7 @@
 
     <!-- Project 1 -->
     <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/peachPuffLynx175271/embed"></iframe>
+      <iframe src="https://academy.cs.cmu.edu/sharing/peachPuffLynx175271/embed" loading="lazy" allowfullscreen></iframe>
       <p>This game is a food truck puzzle challenge that encourages users to complete a delivery by navigating through a maze-like map. It teaches about Zero Hunger through fun and logic. We used conditionals and events like <code>onKeyPress</code> and <code>onStep</code> to make the truck move correctly.</p>
       <p>We created a reusable function to give feedback based on the position of the truck and number of tries.</p>
       <pre><code>def feedback(position, tries):
@@ -123,7 +129,7 @@
 
     <!-- Project 2 -->
     <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/goldenRodToad290018/embed"></iframe>
+      <iframe src="https://academy.cs.cmu.edu/sharing/goldenRodToad290018/embed" loading="lazy" allowfullscreen></iframe>
       <p>This mini-game demonstrates hunger stats and teaches the Zero Hunger goal with facts and questions. We use randomness and data to change what fact or quiz appears. It’s educational and interactive.</p>
       <p>Below is our code for randomizing stats and handling game scoring.</p>
       <pre><code>def showFact():
@@ -137,7 +143,7 @@ else:
 
     <!-- Project 3 -->
     <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/azureRabbit648603/embed"></iframe>
+      <iframe src="https://academy.cs.cmu.edu/sharing/azureRabbit648603/embed" loading="lazy" allowfullscreen></iframe>
       <p>This drag-and-drop style game challenges users to match food items with people in need. We created custom dragging logic and drop zones to make the game functional. It supports the hunger goal through interactive empathy.</p>
       <p>Here's the code that checks drops and triggers success or retry:</p>
       <pre><code>def onDrop(item, zone):
@@ -149,7 +155,7 @@ else:
 
     <!-- Project 4 -->
     <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/cadetBlueFrog487570/embed"></iframe>
+      <iframe src="https://academy.cs.cmu.edu/sharing/cadetBlueFrog487570/embed" loading="lazy" allowfullscreen></iframe>
       <p>This project is a library that uses random stats and two games to describe the goal to take away all hunger in the world. The stats section teaches many people things they didn't know and the games provide an entertainer to hook the reader in.</p>
       <p>This is my <code>onStep</code> code and custom function which motivates the user by displaying a different random message every few seconds and tells you if you messed up or won the game.</p>
       <pre><code>def onStep():
@@ -181,7 +187,7 @@ if (car.hitsShape(foodCrate)):
 
     <!-- Project 5 -->
     <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/mistyRoseKangaroo946339/embed"></iframe>
+      <iframe src="https://academy.cs.cmu.edu/sharing/mistyRoseKangaroo946339/embed" loading="lazy" allowfullscreen></iframe>
       <p>This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. It teaches that giving away food can save lives.</p>
       <p>We used directional key commands and custom functions to give feedback based on number of tries and path progress.</p>
       <pre><code>def messages(color):
@@ -210,7 +216,7 @@ if ('left' in keys):
 
     <!-- Project 6 -->
     <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/khakiBear123456/embed"></iframe>
+      <iframe src="https://academy.cs.cmu.edu/sharing/khakiBear123456/embed" loading="lazy" allowfullscreen></iframe>
       <p>This project is a facts and quiz game for Zero Hunger. It uses multiple screens, labels, and score tracking to teach and entertain. We made use of global variables, lists, and logic functions to switch questions and feedback.</p>
       <p>This is how we switch questions and check answers in the quiz:</p>
       <pre><code>def checkAnswer(userInput):
@@ -229,4 +235,3 @@ if ('left' in keys):
 
 </body>
 </html>
-
