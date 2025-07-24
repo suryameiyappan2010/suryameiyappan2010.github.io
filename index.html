@@ -2,264 +2,268 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Surya's Coding Portfolio</title>
+  <title>Surya's Portfolio</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-    * {
-      box-sizing: border-box;
-    }
 
     body {
       margin: 0;
       padding: 0;
+      background-color: #0b0b0c;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #f0f0f0;
-    }
-
-    header {
+      color: #e0e0e0;
       text-align: center;
-      padding: 50px 20px 30px;
-      background-color: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(5px);
-      border-bottom: 1px solid #444;
+      padding: 60px 20px;
     }
 
-    header h1 {
-      font-size: 42px;
-      margin: 0;
-      color: #fff;
+    .header {
+      font-size: 3rem;
+      color: #8fcf7e;
+      margin-bottom: 10px;
     }
 
-    .caption {
-      font-size: 18px;
-      color: #ccc;
-      margin-top: 10px;
+    h2 {
+      color: #a1c18a;
+      margin-bottom: 30px;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 30px;
-      padding: 40px;
-      max-width: 1400px;
-      margin: auto;
+    .about {
+      color: #bbbbbb;
+      max-width: 480px;
+      margin: 0 auto 50px;
     }
 
-    .project-box {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      padding: 25px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .projects-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 1300px;
+      margin: 0 auto 60px;
+    }
+
+    .project-container {
+      width: 420px;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 255, 100, 0.15);
       display: flex;
       flex-direction: column;
-      overflow: visible;
-      min-height: fit-content;
-    }
-
-    .project-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      align-items: center;
     }
 
     iframe {
-      border: none;
       width: 100%;
-      max-width: 100%;
-      height: 400px;
+      height: 300px;
       border-radius: 10px;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      border: none;
     }
 
-    .project-box:hover iframe {
-      transform: scale(1.02);
+    .description {
+      text-align: left;
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #d0d0d0;
     }
 
-    p {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #e0e0e0;
-      margin-bottom: 16px;
-    }
-
-    pre {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 14px;
+    .sample-code {
+      background-color: #1e1e1e;
+      color: #8fcf7e;
+      padding: 10px;
       border-radius: 10px;
-      font-size: 13px;
-      overflow-x: auto;
+      margin-top: 10px;
+      font-family: monospace;
+      text-align: left;
       white-space: pre-wrap;
-      word-wrap: break-word;
-      color: #fff;
-      margin-bottom: 20px;
+      font-size: 0.9rem;
     }
 
-    code {
-      font-family: Consolas, monospace;
+    .coming-soon {
+      font-weight: 600;
+      color: #a8ff9e;
+      font-size: 1.2rem;
+      margin: 30px 0;
+    }
+
+    .contact-section {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 10px;
+      color: #a8ff9e;
+      max-width: 400px;
+      margin: 0 auto;
+      font-weight: 600;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
+  <h1 class="header">Surya's Portfolio</h1>
+<h2>Programming with Precision. Tuned into Innovation.</h2>
+<p style="color:#f0f0f0; font-size: 1.25rem; margin-top: -10px;">Coding as fast as a lightning bolt ⚡⚡⚡</p>
+  <p class="about">I'm a sophomore from Illinois who loves exploring the intersection of technology and music.</p>
 
-  <header>
-    <h1>Surya's Coding Portfolio</h1>
-    <div class="caption">Coding as fast as a lightning bolt ⚡⚡⚡</div>
-  </header>
-
-  <div class="projects">
-
-    <!-- Box 1 -->
-    <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/peachPuffLynx175271/embed" loading="lazy" allowfullscreen></iframe>
-      <p>This game is a food truck puzzle challenge that encourages users to complete a delivery by navigating through a maze-like map. It teaches about Zero Hunger through fun and logic. We used conditionals and events like <code>onKeyPress</code> and <code>onStep</code> to make the truck move correctly.</p>
-      <p>We created a reusable function to give feedback based on the position of the truck and number of tries.</p>
-      <pre><code>def feedback(position, tries):
-    if position == 'nearEnd' and tries &lt;= 5:
-        showMessage('Awesome!')
-    elif position == 'mid' and tries &lt; 10:
-        showMessage('Keep Going!')
-    else:
-        showMessage('Try Again')</code></pre>
+  <div class="projects-wrapper">
+    <div class="project-container">
+      <iframe src="https://academy.cs.cmu.edu/sharing/silverEagle694274/embed" allowfullscreen loading="lazy"></iframe>
+      <div class="description">
+        This is a project describing 4 out of the 17 global goals. We learned about making shapes, fills, gradients, borders, dashes, etc. in this unit.
+      </div>
+      <div class="description">
+        The code below creates the "Life Below Water" goal box featured in the project above.
+      </div>
+      <div class="sample-code">
+Label('Life Below', 254, 15, size=14, bold=True, font='monospace')
+Label('Water', 233, 38, size=14, bold=True, font='monospace')
+Oval(340, 85, 60, 35, fill='sandyBrown')
+Polygon(330, 85, 295, 60, 295, 110, fill='sandyBrown')
+Oval(290, 135, 60, 35, fill='sandyBrown')
+Polygon(280, 135, 245, 110, 245, 160, fill='sandyBrown')
+Circle(355, 85, 3, fill='black')
+Circle(305, 135, 3, fill='black')
+Circle(375, 50, 6, fill=gradient('gainsboro', 'white'), border='black', borderWidth=1, opacity=80)
+Circle(320, 110, 6, fill=gradient('gainsboro', 'white'), border='black', borderWidth=1, opacity=80)
+Circle(362, 158, 10, fill=gradient('gainsboro', 'white'), border='black', borderWidth=1, opacity=80)
+      </div>
     </div>
 
-    <!-- Box 2 -->
-    <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/goldenRodToad290018/embed" loading="lazy" allowfullscreen></iframe>
-      <p>This mini-game demonstrates hunger stats and teaches the Zero Hunger goal with facts and questions. We use randomness and data to change what fact or quiz appears. It’s educational and interactive.</p>
-      <p>Below is our code for randomizing stats and handling game scoring.</p>
-      <pre><code>def showFact():
-    statLabel.value = random.choice(facts)
-    statLabel.visible = True</code></pre>
-      <pre><code>if userAnswer == correctAnswer:
-    score += 1
-else:
-    wrong += 1</code></pre>
+    <div class="project-container">
+      <iframe src="https://academy.cs.cmu.edu/sharing/mintCreamTurtle187297/embed" allowfullscreen loading="lazy"></iframe>
+      <div class="description">
+        This is a project describing one global goals in slideshow form. In this unit, we used functions and mouse actions to code this project.
+      </div>
+      <div class="description">
+        This code is used to make my logo, the bowl with food. I show two distinct calls on different slides. I have four rectangles and one circle in my code, representing the lack of hunger in areas.
+      </div>
+      <div class="sample-code">
+def onMousePress(x,y):
+    page.value += 1
+    if(page.value == 2):
+        SecondLogo(93, 186, 'darkKhaki', 'lemonChiffon')
+    if(page.value == 3):
+        SecondLogo(95, 190, 'darkKhaki', 'lightGoldenrodYellow')
+      </div>
     </div>
 
-    <!-- Box 3 -->
-    <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/azureRabbit648603/embed" loading="lazy" allowfullscreen></iframe>
-      <p>This drag-and-drop style game challenges users to match food items with people in need. We created custom dragging logic and drop zones to make the game functional. It supports the hunger goal through interactive empathy.</p>
-      <p>Here's the code that checks drops and triggers success or retry:</p>
-      <pre><code>def onDrop(item, zone):
-    if zone.contains(item.centerX, item.centerY):
-        showSuccess()
-    else:
-        showRetry()</code></pre>
-    </div>
-
-    <!-- Box 4 -->
-    <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/cadetBlueFrog487570/embed" loading="lazy" allowfullscreen></iframe>
-      <p>This project is a library that uses random stats and two games to describe the goal to take away all hunger in the world. The stats section teaches many people things they didn't know and the games provide an entertainer to hook the reader in. We used unit 6 variables such as onStep and random to make the facts and games as engaging as possible.</p>
-      <p>This is my onStep code and my custom function which motivates the user by displaying a different random message every few seconds and the custom function tells you if you messed up or won the game.</p>
-      <pre><code>def onStep():
-    if (app.background == 'peachPuff'):
-        app.messageTimer +=1
-        if (app.messageTimer >= 50):
-            app.messageTimer = 0
-            messageLabel.value = random.choice(messages)
-            messageLabel.visible=True
-            messageLabel.toFront()</code></pre>
-      <pre><code>backdrop = Rect(100, 150, 200, 75, fill='gainsboro', border='black', borderWidth=16, visible=False)
-finish = Label('message', 200, 190, fill='black', bold=True, size=24, visible=False)</code></pre>
-      <pre><code>def success(message, color):
-    backdrop.border = color
-    finish.value = message
-    finish.fill = color
-    backdrop.visible=True
-    finish.visible=True
-    backdrop.toFront()
-    finish.toFront()</code></pre>
-      <pre><code>if (path.containsShape(car)):
-    pass
-else:
-    app.stop()
-    success('Game Over', 'crimson')
-
-if (car.hitsShape(foodCrate)):
-    success('You Win', 'green')
-    app.stop()</code></pre>
-    </div>
-
-    <!-- Box 5 -->
-    <div class="project-box">
+    <div class="project-container">
       <iframe width="410" height="460"
-        src="https://academy.cs.cmu.edu/sharing/mistyRoseKangaroo946339/embed"> 
+        src="https://academy.cs.cmu.edu/sharing/slateBlueSeal934255/embed" allowfullscreen loading="lazy">
       </iframe>
-      <p>This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. This teaches them about how if you give away food you can save many people. To accomplish this, we used directional key commands and custom functions.</p>
-      <p>This is my custom functions messages which send messages for the user to see based on the number of tries they take to complete the game and where on the path they are. The color changes for every time you change direction. This adds more depth to the game and gives the user a challenge to get it in the least amount of tries as possible.</p>
-      <pre><code>def messages(color):
-    if (car.bottom &lt; 410) and (car.bottom &gt; 280) and (tries.value &gt;=0):
-        motivation.value = 'Almost There'
-        motivation.toFront()
-        motivation.fill = color
-    elif (9 &gt;= tries.value &gt;= 5) and (car.bottom &lt; 280):
-        motivation.value = 'Try your best'
-        motivation.toFront()
-        motivation.fill = color
-    elif (tries.value &gt;= 9):
-        motivation.value = 'Do better'
-        motivation.toFront()
-        motivation.fill = color</code></pre>
-      <pre><code> if ('right' in keys):
-    car.rotateAngle = 90
-    car.centerX +=3
-    messages('peachPuff')
-if ('left' in keys):
-    car.rotateAngle = 90
-    car.centerX -= 3
-    messages('dodgerBlue')</code></pre>
+      <div class="description">
+        This project is a game that represents a global goal, educating the user and entertaining them at the same time. 
+        We used <strong>if statements</strong>, <strong>elif statements</strong>, and <strong>custom functions</strong>.
+      </div>
+      <div class="description">
+        IncreaseMoney is my custom function which motivates the user with terms like <em>Way to Go</em> and <em>Try Harder</em> using the parameters money per click (x) and number of upgrades the user has. Based on the dollar value and the number of upgrades the user has, different motivational texts pop up. This function controls and ties together the upgrades, money the user has, and the motivational texts.
+      </div>
+      <div class="sample-code">
+#Surya - Custom Function with Motivational Messages<br>
+def increaseMoney(x, upgrades):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dollar.value += x<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(upgrades &gt;= 1) and (dollar.value &lt;= 500):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = Label('Try Harder!', 70, 220, size=15, font='orbitron')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (dollar.value &gt;= 8000) and (upgrades &gt;= 2):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z = Rect(20, 210, 100, 20, fill='lightCyan')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wtg = Label('Keep Going!', 70, 220, size=15, font='orbitron')
+      </div>
+      <div class="sample-code">
+increaseMoney(10, 1)<br>
+increaseMoney(50, 2)<br>
+increaseMoney(200, 3)
+      </div>
     </div>
 
-    <!-- Box 6 -->
-    <div class="project-box">
-      <iframe src="https://academy.cs.cmu.edu/sharing/khakiBear123456/embed" loading="lazy" allowfullscreen></iframe>
-      <p>This project is a facts and quiz game for Zero Hunger. It uses multiple screens, labels, and score tracking to teach and entertain. We made use of global variables, lists, and logic functions to switch questions and feedback.</p>
-      <p>This is how we switch questions and check answers in the quiz:</p>
-      <pre><code>def checkAnswer(userInput):
-    if userInput == answerList[currentIndex]:
-        score.value += 1
-        nextQuestion()</code></pre>
-      <pre><code>def nextQuestion():
-    currentIndex += 1
-    if currentIndex &lt; len(questions):
-        displayQuestion(currentIndex)
-    else:
-        showFinalScore()</code></pre>
-
-      <!-- Added content below as requested -->
-      <p>This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. This teaches them about how if you give away food you can save many people. To accomplish this, we used directional key commands and custom functions.</p>
-      <p>This is my custom functions messages which send messages for the user to see based on the number of tries they take to complete the game and where on the path they are. The color changes for every time you change direction. This adds more depth to the game and gives the user a challenge to get it in the least amount of tries as possible.</p>
-      <pre><code>def messages(color):
-    if (car.bottom &lt; 410) and (car.bottom &gt; 280) and (tries.value &gt;=0):
-        motivation.value = 'Almost There'
-        motivation.toFront()
-        motivation.fill = color
-    elif (9 &gt;= tries.value &gt;= 5) and (car.bottom &lt; 280):
-        motivation.value = 'Try your best'
-        motivation.toFront()
-        motivation.fill = color
-    elif (tries.value &gt;= 9):
-        motivation.value = 'Do better'
-        motivation.toFront()
-        motivation.fill = color</code></pre>
-      <pre><code> if ('right' in keys):
-    car.rotateAngle = 90
-    car.centerX +=3
-    messages('peachPuff')
-if ('left' in keys):
-    car.rotateAngle = 90
-    car.centerX -= 3
-    messages('dodgerBlue')</code></pre>
+    <div class="project-container">
+      <iframe width="410" height="460"
+        src="https://academy.cs.cmu.edu/sharing/lavenderBlushFrog501627/embed"> 
+      </iframe>
+      <div class="description">
+        This is the unit four creative task where we make a quiz to see how well the user conserves energy, teaching them about how to conserve energy and what to change about their actions. To accomplish this we used hits, contains, onkeypress, and onmousepress.
+      </div>
+      <div class="description">
+        This is the code for slide six which uses star variables called option 1, option 2, ... etc. and hits to make it so that only when you click the border of the star you go to the next slide, adding more depth to the slide and making it more challenging.
+      </div>
+      <div class="sample-code">
+#Slide 6 - Surya   
+def q6():
+    app.background = 'navajoWhite'
+    Rect(0, 0, 400, 400, fill='navajoWhite')
+    Label('Question 6:',80,51,size=20)
+    Rect(380, 12, 20, 388, fill='white', border='black', visible=True)
+    Label('Why is solar power considered clean energy?', 190,89,size=18)
+    Label('Hit the border of the star to select the correct answer', 200,10,size=10)
+    optionOne.visible = True
+    optionTwo.visible = True
+    optionThree.visible = True
+    optionFour.visible = True
+    optionOne.toFront()
+    optionTwo.toFront()
+    optionThree.toFront()
+    optionFour.toFront()
+    Label('It produces no air pollution',145,150,size=16),
+    Label('It comes from underground',145,225,size=16),
+    Label('It uses gasoline',105,300,size=16),
+    Label('It burns coal',93,375,size=16),
+    R1.visible=True
+    R1.toFront()
+    R2.visible=True
+    R2.toFront()
+    R3.visible=True
+    R3.toFront()
+    R4.visible=True
+    R4.toFront()
+    R5.visible=True
+    R5.toFront()
+      </div>
     </div>
 
+    <!-- Fifth project container with the Food Truck Game project -->
+    <div class="project-container">
+      <iframe width="410" height="460"
+        src="https://academy.cs.cmu.edu/sharing/mistyRoseKangaroo946339/embed" allowfullscreen loading="lazy">
+      </iframe>
+      <div class="description">
+        This project is a game that helps encompass the food global goal by using a food truck to collect food baskets to supply to the underprivileged. This teaches them about how if you give away food you can save many people. To accomplish this, we used directional key commands and custom functions.
+      </div>
+      <div class="description">
+        This is my custom functions messages which send messages for the user to see based on the number of tries they take to complete the game and where on the path they are. The color changes for every time you change direction. This adds more depth to the game and gives the user a challenge to get it in the least amount of tries as possible.
+      </div>
+      <div class="sample-code">
+def messages(color):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (car.bottom &lt; 410) and (car.bottom &gt; 280) and (tries.value &gt;=0):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.value = 'Almost There'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.toFront()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.fill = color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif (9 &gt;= tries.value &gt;= 5) and (car.bottom &lt; 280):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.value = 'Try your best'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.toFront()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.fill = color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif (tries.value &gt;= 9):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.value = 'Do better'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.toFront()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;motivation.fill = color
+      </div>
+      <div class="sample-code">
+if ('right' in keys):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;car.rotateAngle = 90<br>
+&nbsp;&nbsp;&nbsp;&nbsp;car.centerX +=3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;messages('peachPuff')<br>
+if ('left' in keys):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;car.rotateAngle = 90<br>
+&nbsp;&nbsp;&nbsp;&nbsp;car.centerX -= 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;messages('dodgerBlue')
+      </div>
+    </div>
+
+    <!-- Sixth project container as Coming Soon -->
+    <div class="project-container">
+      <div class="coming-soon">Coming Soon</div>
+    </div>
   </div>
 
+  <div class="contact-section">
+    📞 Contact Me: 000-000-0000
+  </div>
 </body>
 </html>
